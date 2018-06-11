@@ -1,7 +1,7 @@
-﻿using System;
+﻿
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
@@ -15,6 +15,9 @@ public class Rocket : MonoBehaviour {
     AudioSource audioSource;
     float rocketSoundVolume;
 
+    enum State { Alive, Dying, Transcending }
+    State state = State.Alive;
+
 	// Use this for initialization
 	void Start () {
 
@@ -25,21 +28,43 @@ public class Rocket : MonoBehaviour {
 
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+
+        if (state == State.Alive) { 
         Rotate();
         Thrust();
+    }
 
     }
 
     private void OnCollisionEnter(Collision collision) {
 
-        if(collision.gameObject.tag != "Friendly") {
-            DestroyShip();
+        if (state != State.Alive) { return; } //ignore collisions when not alive
+
+        switch (collision.gameObject.tag) {
+
+            case "Friendly":
+                break;
+
+            case "Finish":
+                state = State.Transcending;
+                Invoke("LoadNextScene", 1f);
+                break;
+
+            default:
+                state = State.Dying;
+                Invoke("DestroyShip", 1f);
+                break;
+
         }
+
     }
 
+    private void LoadNextScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
     private void Rotate() {
 
@@ -76,7 +101,8 @@ public class Rocket : MonoBehaviour {
     }
 
     void DestroyShip() {
-        Destroy(this.gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Destroy(this.gameObject);
 
     }
 
