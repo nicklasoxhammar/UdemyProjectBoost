@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour {
 
-    [SerializeField]
-    float rcsThrust = 100f;
-
-    [SerializeField]
-    float mainThrust = 20f;
+    [SerializeField] float rcsThrust = 100f;
+    [SerializeField] float mainThrust = 20f;
+    [SerializeField] AudioClip mainEngineSound;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip levelCompleteSound;
 
     Rigidbody rigidBody;
     AudioSource audioSource;
@@ -50,11 +50,15 @@ public class Rocket : MonoBehaviour {
 
             case "Finish":
                 state = State.Transcending;
+                StartCoroutine(VolumeFade(audioSource, 0f, 0.5f));
+                audioSource.PlayOneShot(levelCompleteSound);
                 Invoke("LoadNextScene", 1f);
                 break;
 
             default:
                 state = State.Dying;
+                StartCoroutine(VolumeFade(audioSource, 0f, 0.5f));
+                audioSource.PlayOneShot(deathSound);
                 Invoke("DestroyShip", 1f);
                 break;
 
@@ -90,8 +94,7 @@ public class Rocket : MonoBehaviour {
             rigidBody.AddRelativeForce(Vector3.up * mainThrust);
 
             if (!audioSource.isPlaying) {
-                audioSource.volume = rocketSoundVolume;
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngineSound);
             }
         }
        
@@ -101,6 +104,7 @@ public class Rocket : MonoBehaviour {
     }
 
     void DestroyShip() {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //Destroy(this.gameObject);
 
@@ -121,6 +125,8 @@ public class Rocket : MonoBehaviour {
         }
 
         if (_EndVolume == 0) { _AudioSource.Stop(); }
+
+        audioSource.volume = rocketSoundVolume;
 
     }
 

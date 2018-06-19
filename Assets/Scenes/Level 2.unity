@@ -156,71 +156,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26fe2a6ab4fdd604a9a37bae5b699062, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &143878824
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 143878825}
-  - component: {fileID: 143878826}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &143878825
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143878824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0.01, z: -12.28}
-  m_LocalScale: {x: 1, y: 1, z: 2.2703123}
-  m_Children: []
-  m_Father: {fileID: 1443510758}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &143878826
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 143878824}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 1, g: 0.9858491, b: 0.9858491, a: 1}
-  m_Intensity: 10
-  m_Range: 15
-  m_SpotAngle: 18.4
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 10, y: 10}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &186825184
 Prefab:
   m_ObjectHideFlags: 0
@@ -579,7 +514,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4664544215455646, guid: db54b565a705e2a43bb1e38cc3640308, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4664544215455646, guid: db54b565a705e2a43bb1e38cc3640308, type: 2}
       propertyPath: m_LocalScale.x
@@ -798,7 +733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4157496641555758, guid: 0a07ad2dc3cc69847a5f7393107fd42c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 23198225385634470, guid: 0a07ad2dc3cc69847a5f7393107fd42c,
         type: 2}
@@ -972,11 +907,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4024382814718840, guid: 9533a1f881a14e047a02daab94fe1ac7,
     type: 2}
   m_PrefabInternal: {fileID: 398626764}
---- !u!4 &1443510758 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4548370840286246, guid: 26fe2a6ab4fdd604a9a37bae5b699062,
-    type: 2}
-  m_PrefabInternal: {fileID: 141664520}
 --- !u!1001 &1509187530
 Prefab:
   m_ObjectHideFlags: 0
