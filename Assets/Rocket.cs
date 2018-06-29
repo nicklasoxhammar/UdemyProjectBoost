@@ -13,6 +13,7 @@ public class Rocket : MonoBehaviour {
 
     Rigidbody rigidBody;
     AudioSource audioSource;
+    AudioSource rocketAudio;
     float rocketSoundVolume;
 
     enum State { Alive, Dying, Transcending }
@@ -21,9 +22,13 @@ public class Rocket : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSource = audioSources[0];
+        rocketAudio = audioSources[1];
+
         rigidBody = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        rocketSoundVolume = audioSource.volume;
+       // audioSource = GetComponent<AudioSource>();
+        rocketSoundVolume = rocketAudio.volume;
         
 
 		
@@ -50,14 +55,14 @@ public class Rocket : MonoBehaviour {
 
             case "Finish":
                 state = State.Transcending;
-                StartCoroutine(VolumeFade(audioSource, 0f, 0.5f));
+                StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
                 audioSource.PlayOneShot(levelCompleteSound);
                 Invoke("LoadNextScene", 1f);
                 break;
 
             default:
                 state = State.Dying;
-                StartCoroutine(VolumeFade(audioSource, 0f, 0.5f));
+                StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
                 audioSource.PlayOneShot(deathSound);
                 Invoke("DestroyShip", 1f);
                 break;
@@ -93,13 +98,13 @@ public class Rocket : MonoBehaviour {
 
             rigidBody.AddRelativeForce(Vector3.up * mainThrust);
 
-            if (!audioSource.isPlaying) {
-                audioSource.PlayOneShot(mainEngineSound);
+            if (!rocketAudio.isPlaying) {
+               rocketAudio.PlayOneShot(mainEngineSound);
             }
         }
        
         if (Input.GetKeyUp(KeyCode.Space)) {
-            StartCoroutine(VolumeFade(audioSource, 0f, 0.5f));
+            StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
         }
     }
 
@@ -126,7 +131,7 @@ public class Rocket : MonoBehaviour {
 
         if (_EndVolume == 0) { _AudioSource.Stop(); }
 
-        audioSource.volume = rocketSoundVolume;
+        rocketAudio.volume = rocketSoundVolume;
 
     }
 
