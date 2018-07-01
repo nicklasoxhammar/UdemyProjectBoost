@@ -63,7 +63,8 @@ public class Rocket : MonoBehaviour {
                 StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
                 audioSource.PlayOneShot(levelCompleteSound);
                 levelCompleteParticles.Play();
-                Invoke("LoadNextScene", 1f);
+                DestroyShip();
+                Invoke("LoadNextScene", 2.3f);
                 break;
 
             default:
@@ -71,7 +72,8 @@ public class Rocket : MonoBehaviour {
                 StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
                 audioSource.PlayOneShot(deathSound);
                 deathParticles.Play();
-                Invoke("DestroyShip", 1f);
+                DestroyShip();
+                Invoke("ReloadLevel", 2.3f);
                 break;
 
         }
@@ -119,9 +121,13 @@ public class Rocket : MonoBehaviour {
     }
 
     void DestroyShip() {
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        mainEngineParticles.Stop();  
+    }
 
+    void ReloadLevel() {
+    
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //Destroy(this.gameObject);
 
     }
 
