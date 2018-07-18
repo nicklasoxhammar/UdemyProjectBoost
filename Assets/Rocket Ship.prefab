@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33460350344778268}
   - component: {fileID: 23604559175222496}
   - component: {fileID: 65015010283696678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Port Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 82763437865942696}
   - component: {fileID: 82877771077570120}
   - component: {fileID: 114334261630044566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rocket Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4005084561918926}
   - component: {fileID: 198901508061442932}
   - component: {fileID: 199157831780408722}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 33301877390506362}
   - component: {fileID: 23397180099565102}
   - component: {fileID: 65236232218292642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4777595425725728}
   - component: {fileID: 198481099612816644}
   - component: {fileID: 199722148305204706}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Success Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 33826801692980800}
   - component: {fileID: 23510834180649550}
   - component: {fileID: 65036914257999784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rocket Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,24 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4929506686378316}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1700618548368566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4091997797045426}
+  - component: {fileID: 108950495435206174}
+  m_Layer: 9
+  m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,13 +159,29 @@ GameObject:
   - component: {fileID: 4183962336568070}
   - component: {fileID: 198601220300517310}
   - component: {fileID: 199720857278923132}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rocket Jet Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1873400873906522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4959301504967258}
+  - component: {fileID: 108222688657860994}
+  m_Layer: 9
+  m_Name: Spot Light1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1917523108906900
 GameObject:
   m_ObjectHideFlags: 1
@@ -161,7 +193,7 @@ GameObject:
   - component: {fileID: 33420569987840268}
   - component: {fileID: 23961022023217548}
   - component: {fileID: 65778022915586920}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Starboard Booster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +213,19 @@ Transform:
   m_Father: {fileID: 4548370840286246}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4091997797045426
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700618548368566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4548370840286246}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &4183962336568070
 Transform:
   m_ObjectHideFlags: 1
@@ -260,6 +305,8 @@ Transform:
   - {fileID: 4777595425725728}
   - {fileID: 4183962336568070}
   - {fileID: 4005084561918926}
+  - {fileID: 4959301504967258}
+  - {fileID: 4091997797045426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -293,6 +340,19 @@ Transform:
   m_Father: {fileID: 4548370840286246}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4959301504967258
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873400873906522}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4548370840286246}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!23 &23397180099565102
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -714,6 +774,78 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!108 &108222688657860994
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1873400873906522}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 15
+  m_Range: 40
+  m_SpotAngle: 60
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!108 &108950495435206174
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700618548368566}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 20
+  m_Range: 10
+  m_SpotAngle: 60
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114334261630044566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -726,7 +858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rcsThrust: 100
-  mainThrust: 20
+  mainThrust: 2000
+  levelLoadDelay: 2.3
   mainEngineSound: {fileID: 8300000, guid: 9d0c4bc7c5ed54d47843c2f4589d93b1, type: 3}
   deathSound: {fileID: 8300000, guid: 77b44e58f207166409d1d89af7859a00, type: 3}
   levelCompleteSound: {fileID: 8300000, guid: 12041452ee168404a880eb807a35d618, type: 3}
