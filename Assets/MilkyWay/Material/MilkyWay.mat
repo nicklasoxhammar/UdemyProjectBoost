@@ -96,7 +96,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Rotation: 0
+    - _Rotation: 7.529642
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -109,4 +109,4 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.66176474, g: 0.6200569, b: 0.6033737, a: 1}
     - _SkyTint: {r: 0.6544118, g: 0.6544118, b: 0.6544118, a: 1}
-    - _Tint: {r: 0.49803922, g: 0.96359587, b: 1, a: 0.5}
+    - _Tint: {r: 0, g: 0.9296875, b: 1, a: 1}
