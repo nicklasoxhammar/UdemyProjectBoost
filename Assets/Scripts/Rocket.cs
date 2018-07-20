@@ -25,6 +25,8 @@ public class Rocket : MonoBehaviour {
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
 
+    bool collisionsEnabled = true;
+
 	// Use this for initialization
 	void Start () {
 
@@ -48,11 +50,26 @@ public class Rocket : MonoBehaviour {
         Thrust();
         }
 
+        if (Debug.isDebugBuild) {
+            DebugKeysPressed();
+        }
+
+    }
+
+    private void DebugKeysPressed() {       
+
+        if (Input.GetKeyDown(KeyCode.L)) {
+            LoadNextLevel();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C)) {
+            collisionsEnabled = !collisionsEnabled;
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
 
-        if (state != State.Alive) { return; } //ignore collisions when not alive
+        if (state != State.Alive || !collisionsEnabled) { return; } //ignore collisions when not alive
 
         switch (collision.gameObject.tag) {
 
@@ -65,7 +82,7 @@ public class Rocket : MonoBehaviour {
                 audioSource.PlayOneShot(levelCompleteSound);
                 levelCompleteParticles.Play();
                 DestroyShip();
-                Invoke("LoadNextScene", levelLoadDelay);
+                Invoke("LoadNextLevel", levelLoadDelay);
                 break;
 
             default:
@@ -81,13 +98,19 @@ public class Rocket : MonoBehaviour {
 
     }
 
-    private void LoadNextScene() {
+    private void LoadNextLevel() {
+
+        //if current level is the last, load first level
+        if(SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1) {
+            SceneManager.LoadScene(0);
+            return;
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void Rotate() {
 
-        rigidBody.freezeRotation = true;
+        rigidBody.angularVelocity = Vector3.zero; //remove rotation due to physics
 
         float rotationThisFrame = rcsThrust * Time.deltaTime;
 
@@ -97,8 +120,6 @@ public class Rocket : MonoBehaviour {
         else if (Input.GetKey(KeyCode.D)) {
             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
-
-        rigidBody.freezeRotation = false;
 
     }
 
