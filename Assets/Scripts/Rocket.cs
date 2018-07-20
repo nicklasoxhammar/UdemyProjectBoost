@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Rocket : MonoBehaviour {
 
@@ -114,18 +115,24 @@ public class Rocket : MonoBehaviour {
 
         float rotationThisFrame = rcsThrust * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.A)) {
+        if(CrossPlatformInputManager.GetAxis("Horizontal") < 0) {
             transform.Rotate(Vector3.forward * rotationThisFrame);
-        }
-        else if (Input.GetKey(KeyCode.D)) {
+        }else if(CrossPlatformInputManager.GetAxis("Horizontal") > 0) {
             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
+        /*if (Input.GetKey(KeyCode.A)) {
+            transform.Rotate(Vector3.forward * rotationThisFrame);
+        }
+  
+        else if (Input.GetKey(KeyCode.D)) {
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
+        }*/
 
     }
 
     private void Thrust() {
 
-        if (Input.GetKey(KeyCode.Space)) {
+        if (CrossPlatformInputManager.GetButton("Jump")){
 
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
@@ -136,7 +143,7 @@ public class Rocket : MonoBehaviour {
             mainEngineParticles.Play();
         }
        
-        if (Input.GetKeyUp(KeyCode.Space)) {
+        if (CrossPlatformInputManager.GetButtonUp("Jump")) {
             StartCoroutine(VolumeFade(rocketAudio, 0f, 0.5f));
             mainEngineParticles.Stop();
         }
