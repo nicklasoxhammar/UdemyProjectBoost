@@ -38,9 +38,7 @@ public class Rocket : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody>();
        // audioSource = GetComponent<AudioSource>();
         rocketSoundVolume = rocketAudio.volume;
-        
-    
-		
+    	
 	}
 
     // Update is called once per frame
@@ -133,7 +131,7 @@ public class Rocket : MonoBehaviour {
     private void Thrust() {
 
         if (CrossPlatformInputManager.GetButton("Jump")){
-
+            
             rigidBody.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
 
             if (!rocketAudio.isPlaying) {
