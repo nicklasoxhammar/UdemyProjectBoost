@@ -15,7 +15,7 @@ public class Rotation : MonoBehaviour {
 	void Update () {
 
         transform.Rotate(Vector3.up * Time.deltaTime * rotationSpeed, Space.World);
-        transform.Rotate(Vector3.left * Time.deltaTime * rotationSpeed, Space.World);
+        //transform.Rotate(Vector3.left * Time.deltaTime * rotationSpeed, Space.World);
 
     }
 }
