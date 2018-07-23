@@ -91,7 +91,7 @@ Material:
     - _DstBlend: 10
     - _Exposure: 8
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 1
     - _GlossyReflections: 1
     - _ImageType: 0
     - _Layout: 0
@@ -111,7 +111,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0, g: 0.92941177, b: 1, a: 0.19607843}
+    - _Color: {r: 0, g: 0.92941177, b: 1, a: 0.44705883}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.66176474, g: 0.6200569, b: 0.6033737, a: 1}
     - _SkyTint: {r: 0.6544118, g: 0.6544118, b: 0.6544118, a: 1}
