@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.019014504, g: 0.049191497, b: 0.055478692, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.04349511, b: 0.05137448, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -272,6 +272,10 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1254788838982000, guid: 32efc9a79abead74d88c3c82218b6334, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32efc9a79abead74d88c3c82218b6334, type: 2}
   m_IsPrefabParent: 0
@@ -393,6 +397,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1076762953142784, guid: 4cec17f2e3cd1fe4da4b6300493855a7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cec17f2e3cd1fe4da4b6300493855a7, type: 2}
   m_IsPrefabParent: 0
@@ -434,6 +442,15 @@ Prefab:
     - target: {fileID: 4125928157189638, guid: f0b8ac84cf42915479e16b4296f5268f, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 23040764802825270, guid: f0b8ac84cf42915479e16b4296f5268f,
+        type: 2}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1832829600433568, guid: f0b8ac84cf42915479e16b4296f5268f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0b8ac84cf42915479e16b4296f5268f, type: 2}
@@ -496,8 +513,8 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1756419540106136, guid: 9492292dd4c550c40a875c8e9baecd74, type: 2}
-      propertyPath: m_Name
-      value: Main Camera
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9492292dd4c550c40a875c8e9baecd74, type: 2}
@@ -834,6 +851,10 @@ Prefab:
     - target: {fileID: 4960693943813840, guid: 4b81045a249cc20469f3830fc0da1f63, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561931265150926, guid: 4b81045a249cc20469f3830fc0da1f63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b81045a249cc20469f3830fc0da1f63, type: 2}
